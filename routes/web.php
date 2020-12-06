@@ -33,7 +33,8 @@ Route::post('/regist/thanks',  'App\Http\Controllers\RegistController@thanks')->
 
 //FixPage
 Route::get('/fix', 'App\Http\Controllers\FixController@index')->name('fix');
-Route::post('/fix/get', 'App\Http\Controllers\FixController@get')->name('fix.get');
+Route::post('/fix/fix', 'App\Http\Controllers\FixController@fix')->name('fix.fix');
+Route::post('/fix/fixed', 'App\Http\Controllers\FixController@fixed')->name('fix.fixed');
 
 //SearchPage
 Route::get('/search', 'App\Http\Controllers\SearchController@index')->name('search');

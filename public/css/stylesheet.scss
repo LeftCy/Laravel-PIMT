@@ -4,11 +4,11 @@
         padding: 15px 45px;
 
         &:hover {
-            background-color: rgba($color: #004094, $alpha: 1.0);
+            filter: brightness(150%);
             transition: 1s;
         }
         &:active {
-            background-color: royalblue;
+            filter: brightness(100%);
             transition: 0.01s;
         }
     }

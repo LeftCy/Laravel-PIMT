@@ -44,13 +44,15 @@ header .navbar-nav .nav-item:active {
 }
 
 .button-container button:hover {
-  background-color: #004094;
+  -webkit-filter: brightness(150%);
+          filter: brightness(150%);
   -webkit-transition: 1s;
   transition: 1s;
 }
 
 .button-container button:active {
-  background-color: royalblue;
+  -webkit-filter: brightness(100%);
+          filter: brightness(100%);
   -webkit-transition: 0.01s;
   transition: 0.01s;
 }
