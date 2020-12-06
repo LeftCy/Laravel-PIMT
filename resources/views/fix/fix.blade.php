@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1 class="heading text-center">情報修正</h1>
+    <h1 class="heading text-center">社員情報修正ページ</h1>
 
     <div class="form-container container">
         <form class="form-group" action="{{ route('fix.fixed') }}" method="POST">
@@ -70,8 +70,13 @@
                 </div>
             </div>
 
-            <div class="button-container">
-                <button class="btn btn-primary" type="submit">修正</button>
+            <div class="button-container row">
+                <div class="col-md-6">
+                    <button class="btn btn-success back" type="button">戻る</button>
+                </div>
+                <div class="col-md-6">
+                    <button class="btn btn-primary" type="submit">修正</button>
+                </div>
             </div>
         </form>
     </div>

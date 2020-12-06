@@ -18,23 +18,23 @@ class RegistController extends Controller
         //フォームで受け取った値を取得
         $inputs = $request->all();
 
-        $user = new User();
-        $user->name = $request->input('name');
-        $user->number = $request->input('number');
-        $user->date = $request->input('date');
-        $user->dep = $request->input('dep');
-        $user->group = $request->input('group');
-        $user->customer = $request->input('customer');
-        $user->postal = $request->input('postal');
-        $user->add = $request->input('add');
-        $user->tel = $request->input('tel');
-        $user->mobile = $request->input('mobile');
-        $user->emergency = $request->input('emergency');
-        $user->relation = $request->input('relation');
+        $info = new User();
+        $info->name = $request->input('name');
+        $info->number = $request->input('number');
+        $info->date = $request->input('date');
+        $info->dep = $request->input('dep');
+        $info->group = $request->input('group');
+        $info->customer = $request->input('customer');
+        $info->postal = $request->input('postal');
+        $info->add = $request->input('add');
+        $info->tel = $request->input('tel');
+        $info->mobile = $request->input('mobile');
+        $info->emergency = $request->input('emergency');
+        $info->relation = $request->input('relation');
 
         //保存
-        $user->save();
+        $info->save();
 
-        return view('regist.thanks', compact('inputs'));
+        return view('regist.thanks', compact('inputs', 'info'));
     }
 }

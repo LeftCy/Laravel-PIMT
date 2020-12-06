@@ -43,3 +43,4 @@ Route::post('/search/get', 'App\Http\Controllers\SearchController@get')->name('s
 //DeletePage
 Route::get('/delete', 'App\Http\Controllers\DeleteController@index')->name('delete');
 Route::post('/delete/confirm', 'App\Http\Controllers\DeleteController@confirm')->name('delete.confirm');
+Route::post('/delete/thanks', 'App\Http\Controllers\DeleteController@thanks')->name('delete.thanks');

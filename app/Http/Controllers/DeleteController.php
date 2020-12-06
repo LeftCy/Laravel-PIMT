@@ -30,8 +30,13 @@ class DeleteController extends Controller
         */
         
         return view('delete.confirm', compact('number', 'info'));
-        
+    }
 
-        
+    public function thanks(Request $request) {
+
+        $number = $request->number;
+        User::where('number', $number)->delete();
+
+        return view('delete.thanks');
     }
 }

@@ -13,10 +13,15 @@ class SearchController extends Controller
     }
 
     public function get(Request $request) {
+        
         $number = $request->number;
         $info = User::where('number' ,$number)->first();
-
-
+        
+        /*
+        $query = User::query();
+        $query->where('number', $number);
+        $info = $query->get();
+        */
 
         return view('search.get', compact('number', 'info'));
     }

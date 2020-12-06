@@ -1,7 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+
+    <h1 class="heading text-center">トップページ</h1>
+
     <div class="container">
-        <h1 class="heading text-center">個人情報管理ツールです</h1>
+      項目を実装
     </div>
+
 @endsection
