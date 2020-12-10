@@ -10,7 +10,9 @@ class RegistController extends Controller
 {
     //登録ページを呼び出す
     public function index() {
-        return view('regist.index');
+        $judge = false;
+
+        return view('regist.index', compact('judge'));
     }
 
     public function thanks(Request $request) {
@@ -32,9 +34,28 @@ class RegistController extends Controller
         $info->emergency = $request->input('emergency');
         $info->relation = $request->input('relation');
 
-        //保存
-        $info->save();
+        //usersテーブルのnumberのみを取得
+        $numbers = User::pluck('number');
 
-        return view('regist.thanks', compact('inputs', 'info'));
+        //Number should be unique
+        //初期化
+        $judge = false;
+        
+        foreach ($numbers as $number) {
+            if ($number == $info->number) {
+                # 入力された社員番号が重複していた場合
+                $judge = true;
+
+                return view('regist.index', compact('judge'));
+            } else {
+                //重複していなかった場合は保存する
+                $info->save();
+
+                return view('regist.thanks', compact('inputs', 'info'));
+            }
+            
+        }
+
+        
     }
 }

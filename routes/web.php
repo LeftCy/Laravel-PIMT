@@ -39,6 +39,7 @@ Route::post('/fix/fixed', 'App\Http\Controllers\FixController@fixed')->name('fix
 //SearchPage
 Route::get('/search', 'App\Http\Controllers\SearchController@index')->name('search');
 Route::post('/search/get', 'App\Http\Controllers\SearchController@get')->name('search.get');
+Route::post('search/list', 'App\Http\Controllers\SearchController@list')->name('search.list');
 
 //DeletePage
 Route::get('/delete', 'App\Http\Controllers\DeleteController@index')->name('delete');

@@ -70,7 +70,7 @@
         </div>
 
         <div class="button-container">
-            <a class="link-button btn-primary btn" href="{{ route('top') }}">トップページへ</a>
+            <a class="link-button btn-success btn" href="{{ route('top') }}">トップページへ</a>
         </div>
 
     </div>

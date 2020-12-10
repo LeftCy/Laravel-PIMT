@@ -3,6 +3,15 @@
 @section('content')
 
     <h1 class="heading text-center">新規登録</h1>
+    
+    <?php
+        if ($judge == false) {
+            //echo "<h2 class='text-center red-text'>社員番号は被っていません</h2>";
+        } else {
+            echo "<h2 class='text-center red-text'>入力された社員番号は既に使用されています</h2>";
+            echo "<h5 class='text-center red-text'>別の社員番号を入力してください</h5>";
+        }
+    ?>
 
     <div class="form-container container">
         <form class="form-group" action="{{ route('regist.thanks') }}" method="POST">
@@ -15,7 +24,7 @@
 
                 <div class="col-md-4 mb-3">
                     <label for="number">社員番号</label>
-                    <input type="number" id="nuber" name="number" class="form-control" placeholder="00000" required>
+                    <input type="number" id="number" name="number" class="form-control" placeholder="00000" required>
                 </div>
 
                 <div class="col-md-4 mb-3">
@@ -70,9 +79,18 @@
                     <input type="text" id="relation" name="relation" class="form-control" placeholder="緊急連絡先の関係を入力" required>
                 </div>
             </div>
-            <div class="button-container">
-                <button class="btn btn-primary" type="submit">登録</button>
+
+            <div class="button-container row">
+                <div class="col-md-6">
+                    <a href="{{ route('top') }}">
+                        <button class="btn btn-success" type="button">トップへ戻る</button>
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <button class="btn btn-primary" type="submit">登録</button>
+                </div>
             </div>
+            
         </form>
     </div>
     
